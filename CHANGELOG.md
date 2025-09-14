@@ -4,6 +4,11 @@ All notable changes to the "line-comment-collector" extension will be documented
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.1.2] - 2025-09-15
+
+- Added images to README.md
+- Minor improvements and bug fixes
+
 ## [0.1.1] - 2025-09-15
 
 - Project structure flattened

@@ -2,7 +2,7 @@
   "name": "line-comment-collector",
   "displayName": "Line Comment Collector",
   "description": "A VS Code extension to collect and manage comments on specific lines of code",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "kshiva1126",
   "repository": {
     "type": "git",
@@ -112,6 +112,7 @@
     "format": "prettier --write .",
     "format-check": "prettier --check .",
     "vscode-package": "vsce package",
+    "vscode-publish": "vsce publish",
     "ovsx-publish": "ovsx publish"
   },
   "devDependencies": {

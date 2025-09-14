@@ -1,5 +1,7 @@
 # Line Comment Collector
 
+![Line Comment Collector](https://github.com/user-attachments/assets/7c1b6c96-8826-4e55-8979-f701c4960131)
+
 A Visual Studio Code extension that allows you to add comments to specific lines of code and manage them in a sidebar TreeView.
 
 ## Features
@@ -19,6 +21,8 @@ A Visual Studio Code extension that allows you to add comments to specific lines
 - VS Code version 1.99.3 or higher
 
 ## How to Use
+
+![Copy All Comments](https://github.com/user-attachments/assets/dd4d3ee2-9e3e-418c-99f0-f5567a1be666)
 
 1. Open a file in the editor
 2. Place your cursor on a line or select text (for multi-line comments)
