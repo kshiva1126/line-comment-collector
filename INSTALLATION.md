@@ -93,6 +93,27 @@ To package the extension for distribution:
    vsce publish
    ```
 
+## Publishing to Open VSX Registry
+
+1. Ensure you have a publisher account on Open VSX Registry (create one at https://open-vsx.org if needed)
+
+2. Install the ovsx CLI tool:
+   ```
+   pnpm add -D ovsx
+   ```
+
+3. Create a personal access token (PAT) on Open VSX Registry
+
+4. Set the PAT as an environment variable:
+   ```
+   export OVSX_PAT=your-personal-access-token
+   ```
+
+5. Publish using ovsx:
+   ```
+   ovsx publish
+   ```
+
 ## Troubleshooting
 
 - If you encounter compilation errors, ensure all dependencies are installed with `pnpm install`

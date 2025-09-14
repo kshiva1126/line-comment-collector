@@ -11,15 +11,17 @@ A Visual Studio Code extension that allows you to add comments to specific lines
 - Copy all comments in a formatted text for easy sharing
 - Clear all comments with a single command
 - Comments persist across VS Code sessions
+- Support for multi-line comments with selections
+- Line decorations to visually identify commented lines in the editor
 
 ## Requirements
 
-- VS Code version 1.85.0 or higher
+- VS Code version 1.99.3 or higher
 
 ## How to Use
 
 1. Open a file in the editor
-2. Place your cursor on a line or select text
+2. Place your cursor on a line or select text (for multi-line comments)
 3. Press `Ctrl+Alt+C` (or `Cmd+Alt+C` on macOS) to add a comment
 4. Enter your comment in the input box that appears
 5. View your comments in the "Line Comment Collector" sidebar
@@ -32,12 +34,12 @@ A Visual Studio Code extension that allows you to add comments to specific lines
 
 This extension contributes the following commands:
 
-- `lineCommentCollector.addComment`: Add a comment to the current line
-- `lineCommentCollector.copyAll`: Copy all comments to clipboard
-- `lineCommentCollector.clearAll`: Clear all comments
+- `lineCommentCollector.addComment`: Add a comment to the current line or selection
+- `lineCommentCollector.copyAll`: Copy all comments to clipboard in a formatted text
+- `lineCommentCollector.clearAll`: Clear all comments after confirmation
 - `lineCommentCollector.edit`: Edit a comment
-- `lineCommentCollector.delete`: Delete a comment
-- `lineCommentCollector.reveal`: Reveal a line in the editor
+- `lineCommentCollector.delete`: Delete a comment after confirmation
+- `lineCommentCollector.reveal`: Reveal a commented line in the editor
 
 ## Known Issues
 
@@ -45,12 +47,32 @@ Currently, there are no known issues. If you encounter any problems, please repo
 
 ## Release Notes
 
+### 0.1.1
+
+- Project structure flattened for better organization
+- Added Prettier for consistent code formatting
+- Minor improvements and bug fixes
+
 ### 0.1.0
 
-Initial release of Line Comment Collector
+Initial release of Line Comment Collector:
+- Add comments to selected lines or cursor position
+- View comments in TreeView sidebar
+- Jump to commented lines from sidebar
+- Edit or delete comments through context menu
+- Copy all comments in formatted text
+- Clear all comments with single command
+- Comments persist across VS Code sessions
 
 ---
 
 ## Contributing
 
 This extension is open source and contributions are welcome. Please see the GitHub repository for more information.
+
+## Publishing
+
+This extension can be published to either the VS Code Marketplace or the Open VSX Registry:
+
+- For VS Code Marketplace: `pnpm run vscode-publish`
+- For Open VSX Registry: `pnpm run ovsx-publish` (requires OVSX_PAT environment variable)

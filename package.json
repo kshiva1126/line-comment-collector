@@ -4,6 +4,10 @@
   "description": "A VS Code extension to collect and manage comments on specific lines of code",
   "version": "0.1.1",
   "publisher": "kshiva1126",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kshiva1126/line-comment-collector"
+  },
   "license": "MIT",
   "engines": {
     "vscode": "^1.99.3"
@@ -108,7 +112,7 @@
     "format": "prettier --write .",
     "format-check": "prettier --check .",
     "vscode-package": "vsce package",
-    "vscode-publish": "vsce publish"
+    "ovsx-publish": "ovsx publish"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
@@ -121,6 +125,7 @@
     "@vscode/test-electron": "^2.5.2",
     "@vscode/vsce": "^3.6.0",
     "eslint": "^9.34.0",
+    "ovsx": "^0.10.5",
     "ts-loader": "^9.5.4",
     "typescript": "^5.9.2",
     "webpack": "^5.101.3",
