@@ -2,9 +2,11 @@
   "name": "line-comment-collector",
   "displayName": "Line Comment Collector",
   "description": "A VS Code extension to collect and manage comments on specific lines of code",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "publisher": "kshiva1126",
+  "license": "MIT",
   "engines": {
-    "vscode": "^1.85.0"
+    "vscode": "^1.99.3"
   },
   "categories": [
     "Other"
@@ -90,6 +92,9 @@
       }
     ]
   },
+  "vsce": {
+    "dependencies": false
+  },
   "scripts": {
     "vscode:prepublish": "pnpm run package",
     "compile": "webpack",
@@ -101,17 +106,20 @@
     "lint": "eslint src",
     "test": "vscode-test",
     "format": "prettier --write .",
-    "format-check": "prettier --check ."
+    "format-check": "prettier --check .",
+    "vscode-package": "vsce package",
+    "vscode-publish": "vsce publish"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
     "@types/node": "22.x",
     "@types/uuid": "^10.0.0",
-    "@types/vscode": "^1.104.0",
+    "@types/vscode": "^1.99.3",
     "@typescript-eslint/eslint-plugin": "^8.42.0",
     "@typescript-eslint/parser": "^8.42.0",
     "@vscode/test-cli": "^0.0.11",
     "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^3.6.0",
     "eslint": "^9.34.0",
     "ts-loader": "^9.5.4",
     "typescript": "^5.9.2",
