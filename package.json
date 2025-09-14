@@ -1,0 +1,124 @@
+{
+  "name": "line-comment-collector",
+  "displayName": "Line Comment Collector",
+  "description": "A VS Code extension to collect and manage comments on specific lines of code",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:lineCommentCollector.addComment",
+    "onView:lineCommentCollector.tree"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "lineCommentCollector.addComment",
+        "title": "Add Line Comment"
+      },
+      {
+        "command": "lineCommentCollector.copyAll",
+        "title": "Copy All Comments"
+      },
+      {
+        "command": "lineCommentCollector.clearAll",
+        "title": "Clear All Comments"
+      },
+      {
+        "command": "lineCommentCollector.edit",
+        "title": "Edit Comment"
+      },
+      {
+        "command": "lineCommentCollector.delete",
+        "title": "Delete Comment"
+      },
+      {
+        "command": "lineCommentCollector.reveal",
+        "title": "Reveal in Editor"
+      }
+    ],
+    "views": {
+      "explorer": [
+        {
+          "id": "lineCommentCollector.tree",
+          "name": "Line Comment Collector"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "lineCommentCollector.copyAll",
+          "when": "view == lineCommentCollector.tree",
+          "group": "navigation@1"
+        },
+        {
+          "command": "lineCommentCollector.clearAll",
+          "when": "view == lineCommentCollector.tree",
+          "group": "navigation@2"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "lineCommentCollector.edit",
+          "when": "view == lineCommentCollector.tree && viewItem == comment",
+          "group": "inline"
+        },
+        {
+          "command": "lineCommentCollector.delete",
+          "when": "view == lineCommentCollector.tree && viewItem == comment",
+          "group": "inline"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "lineCommentCollector.addComment",
+          "when": "editorTextFocus",
+          "group": "navigation"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "lineCommentCollector.addComment",
+        "key": "ctrl+alt+c",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test",
+    "format": "prettier --write .",
+    "format-check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/uuid": "^10.0.0",
+    "@types/vscode": "^1.104.0",
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.42.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.34.0",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.2",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "uuid": "^13.0.0"
+  }
+}

@@ -1,0 +1,12 @@
+# Ignore files that are not part of the source code
+node_modules
+dist
+out
+.vscode-test
+
+# Ignore log files
+logs
+*.log
+
+# Ignore environment files
+.env
