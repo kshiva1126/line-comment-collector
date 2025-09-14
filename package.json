@@ -2,7 +2,7 @@
   "name": "line-comment-collector",
   "displayName": "Line Comment Collector",
   "description": "A VS Code extension to collect and manage comments on specific lines of code",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "publisher": "kshiva1126",
   "repository": {
     "type": "git",
