@@ -4,6 +4,17 @@ All notable changes to the "line-comment-collector" extension will be documented
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.1.6] - 2025-10-26
+
+### Added
+- Added dedicated activity bar icon for Line Comment Collector
+- Extension now appears as independent sidebar view (like TODO Tree)
+- Custom SVG icon showing code lines with comment bubble
+
+### Changed
+- Moved view from Explorer to dedicated activity bar container
+- View name simplified to "Comments" in the sidebar
+
 ## [0.1.5] - 2025-10-26
 
 ### Fixed

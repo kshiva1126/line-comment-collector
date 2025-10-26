@@ -2,7 +2,7 @@
   "name": "line-comment-collector",
   "displayName": "Line Comment Collector",
   "description": "A VS Code extension to collect and manage comments on specific lines of code",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "publisher": "kshiva1126",
   "repository": {
     "type": "git",
@@ -47,11 +47,20 @@
         "title": "Reveal in Editor"
       }
     ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "lineCommentCollector",
+          "title": "Line Comment Collector",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
     "views": {
-      "explorer": [
+      "lineCommentCollector": [
         {
           "id": "lineCommentCollector.tree",
-          "name": "Line Comment Collector"
+          "name": "Comments"
         }
       ]
     },
