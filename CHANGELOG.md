@@ -4,6 +4,15 @@ All notable changes to the "line-comment-collector" extension will be documented
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.1.5] - 2025-10-26
+
+### Fixed
+- Fixed "Invalid comment entry" error when deleting or editing individual comments from TreeView
+
+### Changed
+- Changed copy format: file path and line number now appear first, followed by comment text
+- Changed separator from `---` to `=====` in copied output
+
 ## [0.1.4] - 2025-09-15
 
 - Added images to README.md

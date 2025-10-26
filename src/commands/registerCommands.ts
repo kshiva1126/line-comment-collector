@@ -80,10 +80,6 @@ export function registerCommands(
 
       let text = '';
       entries.forEach((entry, index) => {
-        // Add comment text
-        text += `${entry.comment}
-`;
-
         // Add file path and line info
         if (entry.selection && entry.selection.start !== entry.selection.end) {
           text += `${entry.relativePath}:L${entry.selection.start + 1}-L${entry.selection.end + 1}
@@ -93,9 +89,13 @@ export function registerCommands(
 `;
         }
 
+        // Add comment text
+        text += `${entry.comment}
+`;
+
         // Add separator line between comments (except for the last one)
         if (index < entries.length - 1) {
-          text += '---' + '\n';
+          text += '=====' + '\n';
         }
       });
 
@@ -125,7 +125,10 @@ export function registerCommands(
   // Edit comment command
   const editDisposable = vscode.commands.registerCommand(
     'lineCommentCollector.edit',
-    async (entry: any) => {
+    async (item: any) => {
+      // Extract the actual CommentEntry from LineNode if needed
+      const entry = item?.entry || item;
+
       if (!entry || !entry.id) {
         vscode.window.showErrorMessage('Invalid comment entry');
         return;
@@ -156,7 +159,10 @@ export function registerCommands(
   // Delete comment command
   const deleteDisposable = vscode.commands.registerCommand(
     'lineCommentCollector.delete',
-    async (entry: any) => {
+    async (item: any) => {
+      // Extract the actual CommentEntry from LineNode if needed
+      const entry = item?.entry || item;
+
       if (!entry || !entry.id) {
         vscode.window.showErrorMessage('Invalid comment entry');
         return;
@@ -179,7 +185,10 @@ export function registerCommands(
   // Reveal in editor command
   const revealDisposable = vscode.commands.registerCommand(
     'lineCommentCollector.reveal',
-    async (entry: any) => {
+    async (item: any) => {
+      // Extract the actual CommentEntry from LineNode if needed
+      const entry = item?.entry || item;
+
       if (!entry || !entry.fileUri) {
         vscode.window.showErrorMessage('Invalid comment entry');
         return;
