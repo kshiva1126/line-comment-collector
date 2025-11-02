@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import { CommentService } from '../core/CommentService';
+import { showCommentInputWebview } from '../utils/commentInputWebview';
 
 export function registerCommands(
   context: vscode.ExtensionContext,
@@ -37,10 +38,7 @@ export function registerCommands(
         selectionRange = { start: startLine, end: endLine };
       }
 
-      const comment = await vscode.window.showInputBox({
-        prompt: 'Enter your comment',
-        placeHolder: 'Comment text',
-      });
+      const comment = await showCommentInputWebview('Add Line Comment');
 
       if (comment === undefined) {
         // User cancelled input
@@ -134,11 +132,10 @@ export function registerCommands(
         return;
       }
 
-      const newComment = await vscode.window.showInputBox({
-        prompt: 'Edit your comment',
-        placeHolder: 'Comment text',
-        value: entry.comment,
-      });
+      const newComment = await showCommentInputWebview(
+        'Edit Comment',
+        entry.comment,
+      );
 
       if (newComment === undefined) {
         // User cancelled input

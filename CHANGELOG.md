@@ -4,6 +4,24 @@ All notable changes to the "line-comment-collector" extension will be documented
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.1.7] - 2025-10-29
+
+### Added
+- Webview-based multiline comment input with dedicated textarea
+- Keyboard shortcuts: Ctrl+Enter (Cmd+Enter) to submit, Escape to cancel
+- Auto-focus and cursor positioning for immediate typing
+- Split view: Webview opens beside current editor for side-by-side commenting
+
+### Changed
+- Replaced single-line input box with webview panel for better UX
+- Input form now matches VS Code theme colors
+- No more file save dialogs appearing during comment input
+- Comment input now displays in split view, allowing code review while typing
+
+### Fixed
+- Fixed issue where Ctrl+S triggered unwanted file save dialog
+- Fixed Promise resolution bug where comments were not being saved on submit
+
 ## [0.1.6] - 2025-10-26
 
 ### Added
