@@ -26,8 +26,27 @@ export function activate(context: vscode.ExtensionContext) {
     treeDataProvider: treeProvider,
   });
 
+  // Function to update badge with comment count
+  const updateBadge = () => {
+    const count = commentService.getAll().length;
+    if (count > 0) {
+      treeView.badge = {
+        value: count,
+        tooltip: `${count} comment${count === 1 ? '' : 's'}`,
+      };
+    } else {
+      treeView.badge = undefined;
+    }
+  };
+
+  // Initial badge update
+  updateBadge();
+
   // Register commands
-  registerCommands(context, commentService, () => treeProvider.refresh());
+  registerCommands(context, commentService, () => {
+    treeProvider.refresh();
+    updateBadge();
+  });
 
   // Update decorations when active editor changes
   vscode.window.onDidChangeActiveTextEditor(editor => {

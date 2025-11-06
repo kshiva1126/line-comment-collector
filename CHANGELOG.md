@@ -4,6 +4,16 @@ All notable changes to the "line-comment-collector" extension will be documented
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.1.8] - 2025-11-06
+
+### Added
+- Badge display on activity bar icon showing the total number of comments
+- Tooltip on badge showing comment count (e.g., "5 comments")
+
+### Changed
+- Badge automatically updates when comments are added, edited, or deleted
+- Badge is hidden when there are no comments
+
 ## [0.1.7] - 2025-10-29
 
 ### Added
